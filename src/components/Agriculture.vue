@@ -3,42 +3,13 @@
     <div class="container">
       <div class="content-grid">
         <div class="visual-side" data-aos="fade-right">
-          <div class="category-card">
-            <div class="card-header">
-              <h3>Les métiers<br />d'avenir en<br />Afrique</h3>
-            </div>
-
-            <div class="card-visual">
-              <div class="icon-circle">
-                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                  <circle cx="40" cy="40" r="38" fill="white" opacity="0.2" />
-                  <path
-                    d="M40 20C35 20 30 25 30 30C30 35 35 40 40 45C45 40 50 35 50 30C50 25 45 20 40 20Z"
-                    fill="white"
-                  />
-                  <path d="M25 45C25 45 30 50 40 55C50 50 55 45 55 45L40 60L25 45Z" fill="white" />
-                </svg>
-              </div>
-            </div>
-
-            <div class="category-list">
-              <h4>CATÉGORIE<br />AGRICULTURE</h4>
-              <ul>
-                <li>• Agronome</li>
-                <li>• Technicien Horticole</li>
-                <li>• Technicien Forestier</li>
-                <li>• Développeur Agrobusiness</li>
-                <li>• Technicien d'élevage</li>
-                <li>• Apiculteur/Aquaculteur</li>
-              </ul>
-            </div>
-          </div>
+          <img src="../images/agri.jpg" alt="agric" class="agric" />
         </div>
 
         <div class="text-side" data-aos="fade-left">
           <h2 class="section-quote">
             J'enseigne plusieurs techniques<br />
-            agropastorales en ligne. »
+            agropastorales en ligne.
           </h2>
 
           <p class="description">
@@ -51,7 +22,7 @@
           <div class="author-info">
             <div class="author-avatar">
               <img
-                src="https://via.placeholder.com/60x60/8B5CF6/ffffff?text=FD"
+                src="../images/fabrice.jpg"
                 alt="Fabrice Djekoung"
               />
             </div>
@@ -69,48 +40,18 @@
 
 <style scoped>
 .agriculture {
-  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  background: linear-gradient(135deg, #1e293b 0%, #893BF6 100%);
   padding: 6rem 0;
   color: white;
 }
-
+.agric {
+  width: 100%;
+}
 .content-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
-}
-
-.category-card {
-  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
-  border-radius: 30px;
-  padding: 3rem 2.5rem;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-}
-
-.card-header h3 {
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 2rem;
-}
-
-.card-visual {
-  display: flex;
-  justify-content: center;
-  margin: 2rem 0;
-}
-
-.icon-circle {
-  width: 150px;
-  height: 150px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(10px);
-  animation: pulse 3s ease-in-out infinite;
 }
 
 @keyframes pulse {
@@ -167,6 +108,15 @@
   position: absolute;
   left: 0;
   top: -20px;
+  font-size: 5rem;
+  color: var(--primary-purple);
+  line-height: 1;
+}
+.section-quote::after {
+  content: '"';
+  position: absolute;
+  left: 72%;
+  top: 36%;
   font-size: 5rem;
   color: var(--primary-purple);
   line-height: 1;

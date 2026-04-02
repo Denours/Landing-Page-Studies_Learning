@@ -5,7 +5,7 @@
       <div class="container">
         <div class="cta-grid" data-aos="fade-up">
           <div class="cta-card">
-            <div class="card-icon">📚</div>
+            <img src="../images/tutos.jpg" alt="tutos" />
             <h3>Tutos et cours gratuits</h3>
             <p>
               Studies Learning rassemble une communauté de formateurs engagés à vous donner les clés
@@ -15,7 +15,7 @@
           </div>
 
           <div class="cta-card">
-            <div class="card-icon">🎁</div>
+            <img src="../images/promos.png" alt="promos" class="img-prom" />
             <h3>Ne manquez pas les promos!</h3>
             <p>
               Bons plans, Promo? Budget réduit ou Formateur par vous pouvez le trouver à nos Vos
@@ -42,17 +42,22 @@
         <div class="footer-grid">
           <div class="footer-col">
             <div class="footer-logo">
-              <img
-                src="https://via.placeholder.com/150x40/8B5CF6/ffffff?text=Studies+Learning"
-                alt="Studies Learning"
-              />
+              <img src="../images/logostud.png" alt="Studies Learning" />
             </div>
             <p class="footer-tagline">La première plateforme d'enseignement en ligne en Afrique.</p>
             <div class="social-links">
-              <a href="#" class="social-icon">f</a>
-              <a href="#" class="social-icon">t</a>
-              <a href="#" class="social-icon">in</a>
-              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">
+                <PhFacebookLogo :size="24" />
+              </a>
+              <a href="#" class="social-icon">
+                <PhWhatsappLogo :size="24" />
+              </a>
+              <a href="#" class="social-icon">
+                <PhLinkedinLogo :size="24" />
+              </a>
+              <a href="#" class="social-icon">
+                <PhInstagramLogo :size="24" />
+              </a>
             </div>
           </div>
 
@@ -79,9 +84,18 @@
           <div class="footer-col">
             <h4>Contact</h4>
             <ul>
-              <li>📧 contact@studieslearning.com</li>
-              <li>📱 +237 XXX XXX XXX</li>
-              <li>📍 Douala, Cameroun</li>
+              <li>
+                <PhEnvelope :size="18" />
+                contact@studieslearning.com
+              </li>
+              <li>
+                <PhPhone />
+                +237 XXX XXX XXX
+              </li>
+              <li>
+                <PhMapPin />
+                Douala - Bonamoussadi, Cameroun
+              </li>
             </ul>
           </div>
         </div>
@@ -102,14 +116,38 @@
 
 <script setup>
 import { computed } from 'vue'
-
+import {
+  PhEnvelope,
+  PhFacebookLogo,
+  PhInstagramLogo,
+  PhLinkedinLogo,
+  PhMapPin,
+  PhPhone,
+  PhWhatsappLogo,
+} from '@phosphor-icons/vue'
 const currentYear = computed(() => new Date().getFullYear())
 </script>
 
 <style scoped>
 .footer {
-  background: var(--dark-blue);
-  color: white;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/footer-studies.jpg');
+  background-size: cover;
+  opacity: 0.5;
+  z-index: -1;
 }
 
 .cta-section {
@@ -138,9 +176,8 @@ const currentYear = computed(() => new Date().getFullYear())
   box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15);
 }
 
-.card-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+.img-prom {
+  height: 60%;
 }
 
 .cta-card h3 {
@@ -226,14 +263,13 @@ const currentYear = computed(() => new Date().getFullYear())
 }
 
 .footer-logo img {
-  height: 40px;
-  margin-bottom: 1rem;
+  height: 100px;
+  width: 140px;
 }
 
 .footer-tagline {
   font-size: 0.95rem;
   line-height: 1.6;
-  opacity: 0.8;
   margin-bottom: 1.5rem;
 }
 
@@ -253,6 +289,7 @@ const currentYear = computed(() => new Date().getFullYear())
   text-decoration: none;
   font-weight: 700;
   transition: all 0.3s ease;
+  color: black;
 }
 
 .social-icon:hover {
@@ -276,7 +313,7 @@ const currentYear = computed(() => new Date().getFullYear())
 }
 
 .footer-col ul li a {
-  color: white;
+  color: black;
   text-decoration: none;
   opacity: 0.8;
   transition: all 0.3s ease;
@@ -301,9 +338,9 @@ const currentYear = computed(() => new Date().getFullYear())
 }
 
 .footer-bottom a {
-  color: white;
   text-decoration: none;
   transition: color 0.3s ease;
+  color: black;
 }
 
 .footer-bottom a:hover {

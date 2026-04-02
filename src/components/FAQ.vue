@@ -43,6 +43,7 @@
         </div>
       </div>
     </div>
+    <button class="btn-savoir-plus">EN SAVOIR PLUS</button>
   </section>
 </template>
 
@@ -181,6 +182,29 @@ const toggleFaq = (index) => {
   text-align: justify;
 }
 
+.btn-savoir-plus {
+  background: var(--gradient-purple);
+  color: white;
+  border: none;
+  padding: 1.2rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+  align-self: flex-start;
+  letter-spacing: 1px;
+  display: block;
+  margin: auto;
+  margin-top: 5%;
+}
+
+.btn-savoir-plus:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.4);
+}
+
 @media (max-width: 768px) {
   .faq-question {
     padding: 1.25rem 1.5rem;
@@ -189,6 +213,10 @@ const toggleFaq = (index) => {
 
   .faq-answer-content {
     padding: 0 1.5rem 1.25rem 1.5rem;
+  }
+
+  .btn-savoir-plus {
+    align-self: stretch;
   }
 }
 </style>
