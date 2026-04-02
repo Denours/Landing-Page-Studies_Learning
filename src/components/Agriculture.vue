@@ -1,0 +1,218 @@
+<template>
+  <section class="agriculture section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="visual-side" data-aos="fade-right">
+          <div class="category-card">
+            <div class="card-header">
+              <h3>Les métiers<br />d'avenir en<br />Afrique</h3>
+            </div>
+
+            <div class="card-visual">
+              <div class="icon-circle">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                  <circle cx="40" cy="40" r="38" fill="white" opacity="0.2" />
+                  <path
+                    d="M40 20C35 20 30 25 30 30C30 35 35 40 40 45C45 40 50 35 50 30C50 25 45 20 40 20Z"
+                    fill="white"
+                  />
+                  <path d="M25 45C25 45 30 50 40 55C50 50 55 45 55 45L40 60L25 45Z" fill="white" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="category-list">
+              <h4>CATÉGORIE<br />AGRICULTURE</h4>
+              <ul>
+                <li>• Agronome</li>
+                <li>• Technicien Horticole</li>
+                <li>• Technicien Forestier</li>
+                <li>• Développeur Agrobusiness</li>
+                <li>• Technicien d'élevage</li>
+                <li>• Apiculteur/Aquaculteur</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-side" data-aos="fade-left">
+          <h2 class="section-quote">
+            J'enseigne plusieurs techniques<br />
+            agropastorales en ligne. »
+          </h2>
+
+          <p class="description">
+            J'ai choisi de rejoindre la communauté de formateurs sur Studies Learning pour
+            transmettre tous mes savoirs sans limites en Afrique et au-delà. Ingénieur agronome,
+            chef d'entreprise et enseignant universitaire, je propose plusieurs formations en
+            agriculture que vous retrouverez dans la catégorie agriculture;
+          </p>
+
+          <div class="author-info">
+            <div class="author-avatar">
+              <img
+                src="https://via.placeholder.com/60x60/8B5CF6/ffffff?text=FD"
+                alt="Fabrice Djekoung"
+              />
+            </div>
+            <div class="author-details">
+              <p class="author-name">Fabrice Djelakoung, Formateur catégorie agriculture.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup></script>
+
+<style scoped>
+.agriculture {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  padding: 6rem 0;
+  color: white;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.category-card {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  border-radius: 30px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.card-header h3 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.card-visual {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.icon-circle {
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+  }
+}
+
+.category-list {
+  margin-top: 2rem;
+}
+
+.category-list h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.category-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.category-list li {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.95;
+}
+
+.text-side {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section-quote {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.4;
+  font-style: italic;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.section-quote::before {
+  content: '"';
+  position: absolute;
+  left: 0;
+  top: -20px;
+  font-size: 5rem;
+  color: var(--primary-purple);
+  line-height: 1;
+}
+
+.description {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  opacity: 0.95;
+  text-align: justify;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.author-avatar {
+  flex-shrink: 0;
+}
+
+.author-avatar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid white;
+  object-fit: cover;
+}
+
+.author-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  opacity: 0.9;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .section-quote {
+    padding-left: 1rem;
+  }
+}
+</style>
