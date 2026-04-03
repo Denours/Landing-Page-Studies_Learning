@@ -70,6 +70,8 @@
   font-size: 1.3rem;
   color: var(--dark-blue);
   margin-bottom: 1rem;
+  color: #e0b32b;
+
 }
 
 .cta-card p {
