@@ -49,15 +49,15 @@
             <h4>Contact</h4>
             <ul>
               <li>
-                <PhEnvelope :size="18" />
+                <PhEnvelope :size="18" color="orange" />
                 contact@studieslearning.com
               </li>
               <li>
-                <PhPhone />
+                <PhPhone color="orange" />
                 +237 692 618 299
               </li>
               <li>
-                <PhMapPin />
+                <PhMapPin color="orange" />
                 Douala - Bonamoussadi, Cameroun
               </li>
             </ul>

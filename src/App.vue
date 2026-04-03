@@ -16,6 +16,8 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue'
+import { useScrollAnimation } from './composables/useScrollAnimation'
 import Agriculture from './components/Agriculture.vue'
 import CommunauteFormateurs from './components/CommunauteFormateurs.vue'
 import CtaCards from './components/CtaCards.vue'
@@ -28,6 +30,8 @@ import Hero from './components/Hero.vue'
 import NosMembres from './components/NosMembres.vue'
 import SolutionEntreprises from './components/SolutionEntreprises.vue'
 import VoirPlusCours from './components/VoirPlusCours.vue'
+
+useScrollAnimation()
 </script>
 
 <style>

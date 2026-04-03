@@ -62,11 +62,9 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, #1E293B, #893BF6);
+  background-image: linear-gradient(to right, #1e293b, #893bf6);
   text-align: center;
 }
-
-
 
 .hero-subtitle {
   font-size: 1.1rem;

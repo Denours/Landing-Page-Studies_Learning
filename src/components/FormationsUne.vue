@@ -1,193 +1,171 @@
 <template>
   <section class="formations-une section">
     <div class="container">
+      <!-- Titre avec animation gradient -->
       <h2 class="section-title" data-aos="fade-up">
-        <span class="title-orange">FORMATIONS À LA UNE</span>
+        <span class="title-gradient">FORMATIONS À LA UNE</span>
       </h2>
 
       <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
         Découvrez nos top formations à la une en cliquant sur chaque bloc.
       </p>
 
+      <!-- Grid avec composant réutilisable -->
       <div class="formations-grid">
-        <div class="formation-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="card-image">
-            <img src="../images/arh.jpg" alt="Formation Archicad 24" />
-          </div>
-          <div class="card-content">
-            <h3>Formation Archicad 24: Les nouveautés</h3>
-          </div>
-          <button class="btn-voir">VOIR</button>
-        </div>
-
-        <div class="formation-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="card-image">
-            <img src="../images/pont.png" alt="Approvisionnement" />
-          </div>
-          <div class="card-content">
-            <h3>La réalisation du suivi des approvisionnements et du stock</h3>
-          </div>
-          <button class="btn-voir">VOIR</button>
-        </div>
-
-        <div class="formation-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="card-image">
-            <img src="../images/windev.png" alt="WinDev" />
-          </div>
-          <div class="card-content">
-            <h3>Développement d'applications robustes avec WinDev</h3>
-          </div>
-          <button class="btn-voir">VOIR</button>
-        </div>
-
-        <div class="formation-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="card-image">
-            <img src="../images/charc.jpg" alt="Charcuterie" />
-          </div>
-          <div class="card-content">
-            <h3>Formation métier en charcuterie cuite</h3>
-          </div>
-          <button class="btn-voir">VOIR</button>
-        </div>
-
-        <div class="formation-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="card-image">
-            <img src="../images/init.png" alt="Monétique" />
-          </div>
-          <div class="card-content">
-            <h3>Formation Initiation Métier Monétique</h3>
-          </div>
-          <button class="btn-voir">VOIR</button>
-        </div>
-
-        <div class="formation-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="card-image">
-            <img src="../images/fraises.PNG" alt="Agriculture" />
-          </div>
-          <div class="card-content">
-            <h3>Formation Agricole Culture Fraises</h3>
-          </div>
-          <button class="btn-voir">VOIR</button>
-        </div>
+        <FormationCard
+          v-for="(formation, index) in formations"
+          :key="index"
+          :image="formation.image"
+          :title="formation.title"
+          :category="formation.category"
+          :style="{ animationDelay: `${index * 0.1}s` }"
+          @click="handleFormationClick(formation)"
+        />
       </div>
     </div>
+    
+    <!-- Décoration de fond -->
+    <div class="bg-decoration"></div>
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import FormationCard from './FormationCard.vue'
+
+const formations = [
+  {
+    image: new URL('../images/arh.jpg', import.meta.url).href,
+    title: 'Formation Archicad 24: Les nouveautés',
+    category: 'Architecture'
+  },
+  {
+    image: new URL('../images/pont.png', import.meta.url).href,
+    title: 'La réalisation du suivi des approvisionnements et du stock',
+    category: 'Logistique'
+  },
+  {
+    image: new URL('../images/windev.png', import.meta.url).href,
+    title: 'Développement d\'applications robustes avec WinDev',
+    category: 'Développement'
+  },
+  {
+    image: new URL('../images/charc.jpg', import.meta.url).href,
+    title: 'Formation métier en charcuterie cuite',
+    category: 'Métiers'
+  },
+  {
+    image: new URL('../images/init.png', import.meta.url).href,
+    title: 'Formation Initiation Métier Monétique',
+    category: 'Finance'
+  },
+  {
+    image: new URL('../images/fraises.PNG', import.meta.url).href,
+    title: 'Formation Agricole Culture Fraises',
+    category: 'Agriculture'
+  }
+]
+
+function handleFormationClick(formation) {
+  console.log('Formation cliquée:', formation.title)
+  // Ajoute ta logique de navigation ici
+}
+</script>
 
 <style scoped>
 .formations-une {
-  background: var(--gray-50);
-  padding: 6rem 0;
+  background: linear-gradient(
+    to bottom,
+    var(--gray-50) 0%,
+    white 50%,
+    var(--gray-50) 100%
+  );
+  padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Décoration de fond */
+.bg-decoration {
+  position: absolute;
+  top: 10%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.08) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-30px) translateX(20px); }
+}
+
+/* Titre avec gradient animé */
 .section-title {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.title-orange {
-  color: var(--orange);
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 700;
+.title-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--orange) 0%,
+    var(--pink) 50%,
+    var(--primary-purple) 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  animation: gradient-shift 5s ease infinite;
 }
 
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Sous-titre */
 .section-subtitle {
   text-align: center;
   color: var(--gray-800);
-  font-size: 1rem;
-  margin-bottom: 4rem;
-  opacity: 0.8;
+  font-size: 1.1rem;
+  margin-bottom: 5rem;
+  opacity: 0.75;
+  font-weight: 400;
 }
 
+/* Grid responsive */
 .formations-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2.5rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 5%;
-}
-
-.formation-card {
-  background: white;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-  position: relative;
-}
-
-.formation-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(139, 92, 246, 0.2);
-}
-
-.card-image {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-  position: relative;
-}
-
-.card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.formation-card:hover .card-image img {
-  transform: scale(1.1);
-}
-
-.card-content {
-  padding: 1.5rem;
-  min-height: 90px;
-}
-
-.card-content h3 {
-  font-size: 1.1rem;
-  color: var(--dark-blue);
-  font-weight: 600;
-  line-height: 1.4;
-  margin-bottom: 1rem;
-}
-
-.card-logo {
-  margin-top: 0.5rem;
-}
-
-.logo-text {
-  font-weight: 700;
-  color: var(--primary-purple);
-  font-size: 0.9rem;
-}
-
-.btn-voir {
-  width: 100%;
-  padding: 1rem;
-  background: var(--gradient-purple);
-  color: white;
-  border: none;
-  font-weight: 700;
-  font-size: 0.75rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  letter-spacing: 1px;
-}
-
-.btn-voir:hover {
-  background: linear-gradient(135deg, #7c3aed 0%, #9333ea 100%);
-  transform: scale(1.02);
+  padding: 0 1rem;
 }
 
 @media (max-width: 768px) {
+  .formations-une {
+    padding: 5rem 0;
+  }
+  
   .formations-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
+  }
+  
+  .section-subtitle {
+    margin-bottom: 3rem;
   }
 }
 </style>
