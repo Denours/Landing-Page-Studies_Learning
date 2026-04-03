@@ -128,6 +128,8 @@
   box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
   align-self: flex-start;
   letter-spacing: 1px;
+  display: block;
+  margin: auto;
 }
 
 .btn-voir-plus:hover {

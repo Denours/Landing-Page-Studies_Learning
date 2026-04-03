@@ -69,12 +69,6 @@
   color: var(--dark-blue);
 }
 
-.description-box {
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
-
 .description-box p {
   font-size: 0.95rem;
   line-height: 1.8;

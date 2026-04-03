@@ -3,7 +3,7 @@
     <div class="container">
       <nav class="nav">
         <div class="logo">
-          <img src="../images/logostud.png" alt="Studies Learning" class="logo-img" />
+          <a href="#"><img src="../images/logostud.png" alt="Studies Learning" class="logo-img" /></a>
         </div>
 
         <ul class="nav-links">
@@ -11,6 +11,7 @@
           <li><a href="#formations">Cours & Formations</a></li>
           <li><a href="#devenir-formateur">Devenir Formateur</a></li>
           <li><a href="#blog">Le Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
 
         <div class="nav-actions">
@@ -19,7 +20,6 @@
               <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" />
             </svg>
           </a>
-          <!-- <button class="btn-contact">Contactez-nous</button> -->
           <a href="#" class="cart-icon">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
               <path
@@ -40,6 +40,7 @@
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
+            style="cursor: pointer;"
           >
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
@@ -122,10 +123,11 @@ onUnmounted(() => {
   gap: 2rem;
   margin: 0;
   padding: 0;
+  margin-left: 8%;
 }
 
 .nav-links a {
-  color: var(--gray-800);
+  color: var(--gray-light);
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
@@ -135,7 +137,7 @@ onUnmounted(() => {
 
 .nav-links a[href='#formations'],
 .nav-links a[href='#devenir-formateur'] {
-  word-spacing: 3px;
+  word-spacing: 1px;
 }
 
 .nav-links a::after {
@@ -176,35 +178,19 @@ onUnmounted(() => {
   transform: scale(1.1);
 }
 
-.btn-contact {
-  background: var(--gradient-purple);
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
-}
-
-.btn-contact:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(139, 92, 246, 0.4);
-}
 .search-div {
   display: flex;
   gap: 0.5rem;
 }
 .search {
-  border: 1px solid black;
+  border: 1px solid var(--gray-200);
   border-radius: 10px;
   padding: 6px;
 }
 
 .search::placeholder {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: lightgray;
 }
 .mobile-menu-btn {
   display: none;
@@ -231,10 +217,6 @@ onUnmounted(() => {
 
   .nav-actions {
     gap: 1rem;
-  }
-
-  .btn-contact {
-    display: none;
   }
 
   .mobile-menu-btn {

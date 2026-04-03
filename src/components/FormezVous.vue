@@ -3,32 +3,36 @@
     <div class="container">
       <div class="content-grid">
         <div class="visual-side" data-aos="fade-right">
-          <img src="../images/certifications.jpg" alt="certif" class="img-certif">
+          <img src="../images/certifications.jpg" alt="certif" class="img-certif" />
         </div>
-        
+
         <div class="text-side" data-aos="fade-left">
           <h2 class="section-title">
-            <span class="purple-text">FORMEZ-VOUS</span><br>
+            <span class="purple-text">FORMEZ-VOUS</span><br />
             <span class="purple-text">POUR RÉUSSIR</span>
           </h2>
-          
+
           <p class="question">Alors, quelle formation allez-vous choisir ?</p>
-          
+
           <p class="description">
-            Afin que vous ayez toujours de nouvelles opportunités pour devenir une meilleure version de vous-même, nous définissons des formations actuelles, modernes et accessibles à tous. Deux vous enseignent de nouvelles compétences et vous encouragent à les mettre rapidement en pratique. Peu plus des vidéos stimulantes, faites un saut de vie avec un échantillon avec un expert imprimé. Nous menons rapidement au cœur du processus pour enseigner. Car nous sommes conscients que la méthode pour apprendre dans l'éducation peut être un changement. Apprenez ce que vous voulez, quand et comme bon vous semble. Envie de tester vos connaissances ?
+            Afin que vous ayez toujours de nouvelles opportunités pour devenir une meilleure version
+            de vous-même, nous définissons des formations actuelles, modernes et accessibles à tous.
+            Deux vous enseignent de nouvelles compétences et vous encouragent à les mettre
+            rapidement en pratique. Peu plus des vidéos stimulantes, faites un saut de vie avec un
+            échantillon avec un expert imprimé. Nous menons rapidement au cœur du processus pour
+            enseigner. Car nous sommes conscients que la méthode pour apprendre dans l'éducation
+            peut être un changement. Apprenez ce que vous voulez, quand et comme bon vous semble.
+            Envie de tester vos connaissances ?
           </p>
-          
-          <button class="btn-formation">
-            DÉMARREZ VOTRE FORMATION ICI
-          </button>
+
+          <button class="btn-formation">DÉMARREZ VOTRE FORMATION ICI</button>
         </div>
       </div>
     </div>
   </section>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style scoped>
 .formez-vous {
@@ -43,11 +47,11 @@
   align-items: center;
 }
 
-.img-certif{
+.img-certif {
   width: 100%;
 }
 .certification-card {
-  background: linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%);
+  background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
   border-radius: 30px;
   padding: 3rem;
   box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
@@ -62,7 +66,7 @@
 }
 
 .highlight {
-  color: #FCD34D;
+  color: #fcd34d;
   font-size: 1.1em;
 }
 
@@ -139,8 +143,8 @@
 
 .question {
   font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--dark-blue);
+  font-weight: 900;
+  color: black;
 }
 
 .description {
@@ -163,6 +167,8 @@
   box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
   align-self: flex-start;
   letter-spacing: 0.5px;
+  display: block;
+  margin: auto;
 }
 
 .btn-formation:hover {
@@ -171,7 +177,8 @@
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(0deg);
   }
   50% {
@@ -184,7 +191,7 @@
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .btn-formation {
     align-self: stretch;
   }

@@ -3,7 +3,7 @@
     <div class="container">
       <div class="hero-content" data-aos="fade-up">
         <h1 class="hero-title">
-          Apprendre et réussir <span class="text-gradient">en ligne</span><br />
+          Apprendre et réussir en ligne<br />
           avec Studies Learning
         </h1>
 
@@ -14,7 +14,7 @@
         </p>
 
         <div class="hero-cta" data-aos="fade-up" data-aos-delay="200">
-          <button class="btn btn-primary">INSCRIVEZ-VOUS »</button>
+          <button class="btn btn-primary">INSCRIVEZ-VOUS ></button>
         </div>
       </div>
     </div>
@@ -59,16 +59,14 @@
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1.5rem;
-  color: var(--dark-blue);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #1E293B, #893BF6);
   text-align: center;
 }
 
-.text-gradient {
-  background: var(--gradient-purple);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+
 
 .hero-subtitle {
   font-size: 1.1rem;

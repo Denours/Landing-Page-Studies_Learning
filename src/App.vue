@@ -10,6 +10,7 @@
     <SolutionEntreprises />
     <Agriculture />
     <FAQ />
+    <CtaCards />
     <Footer />
   </div>
 </template>
@@ -17,6 +18,7 @@
 <script setup>
 import Agriculture from './components/Agriculture.vue'
 import CommunauteFormateurs from './components/CommunauteFormateurs.vue'
+import CtaCards from './components/CtaCards.vue'
 import FAQ from './components/FAQ.vue'
 import Footer from './components/Footer.vue'
 import FormationsUne from './components/FormationsUne.vue'
