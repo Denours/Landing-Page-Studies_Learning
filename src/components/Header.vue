@@ -243,10 +243,10 @@ onUnmounted(() => {
     margin-left: 0;
   }
 
-  .nav-actions,
+  /* .nav-actions,
   .search-div {
     display: none;
-  }
+  } */
 
   .mobile-menu-btn {
     display: flex;

@@ -126,6 +126,7 @@
     padding-top: 100px;
     min-height: auto;
     padding-bottom: 3rem;
+    margin-top: 15%;
   }
 
   .container {
