@@ -3,15 +3,19 @@
     <div class="container">
       <nav class="nav">
         <div class="logo">
-          <a href="#"><img src="../images/logostud.png" alt="Studies Learning" class="logo-img" /></a>
+          <a href="#"
+            ><img src="../images/logostud.png" alt="Studies Learning" class="logo-img"
+          /></a>
         </div>
 
-        <ul class="nav-links">
-          <li><a href="#accueil">Accueil</a></li>
-          <li><a href="#formations">Cours & Formations</a></li>
-          <li><a href="#devenir-formateur">Devenir Formateur</a></li>
-          <li><a href="#blog">Le Blog</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <ul class="nav-links" :class="{ open: mobileMenuOpen }">
+          <li><a href="#accueil" @click="mobileMenuOpen = false">Accueil</a></li>
+          <li><a href="#formations" @click="mobileMenuOpen = false">Cours & Formations</a></li>
+          <li>
+            <a href="#devenir-formateur" @click="mobileMenuOpen = false">Devenir Formateur</a>
+          </li>
+          <li><a href="#blog" @click="mobileMenuOpen = false">Le Blog</a></li>
+          <li><a href="#contact" @click="mobileMenuOpen = false">Contact</a></li>
         </ul>
 
         <div class="nav-actions">
@@ -40,7 +44,7 @@
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            style="cursor: pointer;"
+            style="cursor: pointer"
           >
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
@@ -103,6 +107,8 @@ onUnmounted(() => {
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
+  position: relative;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -124,6 +130,26 @@ onUnmounted(() => {
   margin: 0;
   padding: 0;
   margin-left: 8%;
+}
+
+.nav-links.open {
+  display: flex;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid var(--gray-200);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  z-index: 999;
+}
+
+.nav-links.open li {
+  width: 100%;
 }
 
 .nav-links a {
@@ -213,10 +239,13 @@ onUnmounted(() => {
 @media (max-width: 768px) {
   .nav-links {
     display: none;
+    width: 100%;
+    margin-left: 0;
   }
 
-  .nav-actions {
-    gap: 1rem;
+  .nav-actions,
+  .search-div {
+    display: none;
   }
 
   .mobile-menu-btn {

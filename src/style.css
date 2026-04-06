@@ -53,6 +53,13 @@ html {
   scroll-behavior: smooth;
 }
 
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Typography */
 h1,
 h2,
@@ -113,6 +120,7 @@ h3 {
 
 /* Container */
 .container {
+  width: min(1200px, 100%);
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
@@ -120,6 +128,7 @@ h3 {
 
 /* Section spacing */
 .section {
+  width: 100%;
   padding: 5rem 0;
 }
 
@@ -160,7 +169,7 @@ h3 {
 /* Responsive */
 @media (max-width: 768px) {
   .section {
-    padding: 3rem 0;
+    padding: 3rem 1rem;
   }
 
   .btn {
